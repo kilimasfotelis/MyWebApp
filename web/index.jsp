@@ -12,6 +12,6 @@
   </head>
   <body>
   <h1> My first page</h1>
-  $END$
+
   </body>
 </html>
