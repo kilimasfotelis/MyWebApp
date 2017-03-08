@@ -1,5 +1,7 @@
 package com.kcs.servlets;
 
+import com.kcs.vo.Person;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,8 +18,9 @@ public class MySecondPostServlet extends HttpServlet{
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String name = req.getParameter("userName");
         String surname = req.getParameter("userSurname");
+        Person person = new Person(name, surname);
 
-        req.setAttribute("name", name + "" + surname);
+        req.setAttribute("person", person);
 
         req.getRequestDispatcher("welcome.jsp").forward(req,resp);
     }
